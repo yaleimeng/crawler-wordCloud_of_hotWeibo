@@ -12,12 +12,8 @@ import json
 import csv
 
 def request_page(Page):
-    head = {'Accept': 'application / json, text / plain, * / *',  #将登陆后自己的cookie放在这里即可。
-            'Cookie':'_T_WM=92ad429cbdf22c9524df87b0a55feefb; SUB=_2A250102iDeRhGedP4lUU-SzEyziIHXVUOFPqrDV6PUJbkd'
-                     'ANLRXBkW1cStiPVBmhczc9vTY_Q7k41MP4Hw..; SUHB=05i7oALjQ5iteN; '
-                     'SCF=ArLKFWAyxv5wvKrggRX2HLZuw2ZytN3pTdiiyTbXFs39Ig8BCBHMoT7sjUqb5TfNRzR9Jc3Hlo3FAIuJE4aiXqk.; '
-                     'SSOLoginState=1507016178; H5_INDEX=2; H5_INDEX_TITLE=%E8%90%8C%E8%8A%BD%E8%95%BE; '
-                     'H5:PWA:UID=1; M_WEIBOCN_PARAMS=luicode%3D10000011%26lfid%3D102803%26fid%3D102803%26uicode%3D10000011',
+    head = {'Accept': 'application / json, text / plain, * / *', 
+            'Cookie':'_T_WM=92ad429cbdf22c; M_WEIBOCN_PARAMS=3D10000011'   #将登陆后自己的cookie粘贴在这里即可。
             'Referer':'https://m.weibo.cn/p/index?containerid=102803',
             'User-Agent':'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) '
                          'Version/9.0 Mobile/13B143 Safari/601.1',
