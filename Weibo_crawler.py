@@ -3,7 +3,7 @@
 @author: Yalei Meng    E-mail: yaleimeng@sina.com
 @license: (C) Copyright 2017, HUST Corporation Limited.
 @desc:获取新浪热门微博内容。保存为txt文件
-@DateTime: Created on 2017/10/3，at 15:48            '''
+@DateTime: Created on 2017/10/3，at 15:48   '''
 from bs4 import BeautifulSoup as bs
 import requests as rq
 import  time
@@ -23,11 +23,14 @@ def request_page(Page):
 
 def get_text_from(page):
     js = request_page(page)
-    print(len(js['cards']))
+    cards = js.get('data').get('cards')
+    print(len(cards))
     t_list = []
-    for a in range(len(js['cards'])):
+    if not cards:
+        return t_list
+    for a in range(len(js['data']['cards'])):
         try:
-            a_txt = js['cards'][a]['mblog']['text'].split('<')[0]
+            a_txt = js['data']['cards'][a]['mblog']['text'].split('<')[0]
             # pub_time = js['cards'][a]['mblog']['created_at']
             # a_pic = js['cards'][a]['mblog'].get('original_pic')
             t_list.append(a_txt)
